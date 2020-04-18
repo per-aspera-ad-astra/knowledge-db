@@ -2,7 +2,7 @@ doctype html
 html(lang='en')
   include ../partials/_head-children
   body
-    include _header
+    include ../partials/_header-children
 
     .content.container
       .row
@@ -11,6 +11,6 @@ html(lang='en')
             block page
         
         nav.sidebar.col-12.col-md-3
-          include _sidebar
+          include ../partials/_sidebar-children
 
     include ../partials/_scripts-children
