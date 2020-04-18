@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+  include ../partials/_head
+  body
+    include _header
+
+    .content.container
+      .row
+        main.main
+          .categories.container
+            .row
+              block categories
+
+    include ../partials/_scripts
+

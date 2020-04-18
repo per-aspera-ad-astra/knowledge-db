@@ -1,0 +1,16 @@
+.header {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: var(--grey-600);
+}
+
+.site-title {
+  font: 400 19px/1.2 var(--font-title);
+
+  a {
+
+    &:hover {
+      color: var(--white);
+    }
+  }
+}

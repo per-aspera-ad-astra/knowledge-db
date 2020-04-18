@@ -1,0 +1,33 @@
+extends ../../layout/_layout-article
+
+include ../../partials/_mixins
+
+block page
+  +page-title('Как измененить state на противоположный')
+  +code
+    :verbatim
+      ...
+      
+      constructor() {
+        super();
+
+        this.state = {
+          activeWillWatchBtn: false
+        }
+      }
+
+      ...
+      
+      return (
+        ...
+       
+        onClick={() => {
+          this.setState({
+            activeWillWatchBtn: !this.state.activeWillWatchBtn
+          });
+          toggleWillWatch(movie);
+        }}
+
+        ...
+      
+      )

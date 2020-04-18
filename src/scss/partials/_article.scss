@@ -1,0 +1,27 @@
+// Code
+.code {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem 1rem;
+  max-width: 800px;
+  background-color: var(--grey-100);
+  border-radius: 1rem;
+  overflow: hidden;
+
+  @include screen(md) {
+    padding: 0 2rem 1rem;
+  }
+
+  pre {
+    overflow-x: auto;
+    overflow-y: visible;
+    code {
+      font-size: 1.4rem;
+      color: #000;
+
+      @include screen(xl) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

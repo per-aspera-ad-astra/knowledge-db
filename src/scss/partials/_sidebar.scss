@@ -1,0 +1,8 @@
+.sidebar {
+
+  &__link {
+    &:hover {
+      color: var(--white);
+    }
+  }
+}

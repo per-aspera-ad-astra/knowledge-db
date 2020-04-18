@@ -1,0 +1,11 @@
+//- Article page title
+mixin page-title(title)
+  h2.page-title= title
+
+//- Enter a code (need to use :verbatim filter inside)
+mixin code()
+  .code
+    pre
+      code
+        if block
+          block

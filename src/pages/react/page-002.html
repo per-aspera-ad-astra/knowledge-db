@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Knowledge DB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <h1 class="site-title col-8 col-md-3"><a href="/">Knowledge DB</a></h1>
+        </div>
+      </div>
+    </header>
+    <div class="content container">
+      <div class="row">
+        <main class="main col-12 col-md-9">
+          <div class="single-page">
+            <h2 class="page-title">Как измененить state на противоположный</h2>
+            <div class="code">
+              <pre><code>
+...
+
+constructor() {
+  super();
+
+  this.state = {
+    activeWillWatchBtn: false
+  }
+}
+
+...
+
+return (
+  ...
+ 
+  onClick={() => {
+    this.setState({
+      activeWillWatchBtn: !this.state.activeWillWatchBtn
+    });
+    toggleWillWatch(movie);
+  }}
+
+  ...
+
+)
+</code></pre>
+            </div>
+          </div>
+        </main>
+        <nav class="sidebar col-12 col-md-3">
+          <nav class="sidebar">
+            <ul class="list-group">
+              <li class="list-group-item"><a class="sidebar__link" href="/category-react.html">React</a></li>
+              <li class="list-group-item"><a class="sidebar__link" href="/category-js.html">JS</a></li>
+              <li class="list-group-item"><a class="sidebar__link" href="/category-gulp.html">Gulp</a></li>
+              <li class="list-group-item"><a class="sidebar__link" href="/category-scss.html">SCSS</a></li>
+              <li class="list-group-item"><a class="sidebar__link" href="/category-css.html">CSS</a></li>
+              <li class="list-group-item"><a class="sidebar__link" href="/category-html.html">HTML</a></li>
+            </ul>
+          </nav>
+        </nav>
+      </div>
+    </div>
+    <script src="../../js/index.js"></script>
+  </body>
+</html>

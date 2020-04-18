@@ -1,0 +1,20 @@
+extends ../../layout/_layout-article
+
+include ../../partials/_mixins
+
+block page
+  +page-title('Как измененить порт локального хоста по умолчанию')
+  p.
+    Чтобы изменить порт, на котором запускается приложение React, нужно исправить часть package.json из:
+  +code
+    :verbatim
+      "start": "react-scripts start"
+  p Для Windows, например:
+  +code
+    :verbatim
+      "start": "set PORT=3006 && react-scripts start"
+  p Для Linux и Mac OS, например
+  +code
+    :verbatim
+      "start": "PORT=3006 react-scripts start" 
+    

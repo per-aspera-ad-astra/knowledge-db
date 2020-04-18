@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  include ../partials/_head
+  body
+    include _header
+
+    .content.container
+      .row
+        main.main.col-12.col-md-9
+          .category
+            block title
+            .category-list
+              block category-list
+        
+        nav.sidebar.col-12.col-md-3
+          include _sidebar
+
+    include ../partials/_scripts

@@ -1,0 +1,39 @@
+.page-title {
+  font-weight: 700;
+}
+
+.categories {
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45vw;
+    background-color: var(--grey-400);
+    color: var(--white);
+    font-size: 5vw;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px var(--grey-600);
+
+    @include screen(sm) {
+      height: 30vw;
+      font-size: 4vw;;
+    }
+
+    @include screen(lg) {
+      height: 20vw;
+      font-size: 3vw;
+    }
+
+    @include screen(xl) {
+      height: 35vh;
+      font-size: 2vw;
+    }
+
+    &:hover {
+      background-color: var(--grey-600);
+      color: var(--white);
+    }
+  }
+}
