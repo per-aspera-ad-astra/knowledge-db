@@ -29,7 +29,7 @@ gulp.task('sass-production', function(){
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(plumber())
     .pipe(autoprefixer(['last 2 versions', '> 1%'], { cascade: true }))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('docs/css'))
     .pipe(notify({ message: "SCSS completed", onLast: true }));
 });
 
@@ -72,16 +72,16 @@ gulp.task('build', ['clean', 'sass-production'], function() {
   var buildCss = gulp.src([
     'src/css/**/*.css'
   ])
-  .pipe(gulp.dest('build/css'))
+  .pipe(gulp.dest('docs/css'))
 
   var buildJs = gulp.src('src/js/**/*')
-  .pipe(gulp.dest('build/js'))
+  .pipe(gulp.dest('docs/js'))
 
   var buildImg = gulp.src('src/images/**/*')
-  .pipe(gulp.dest('build/images'))
+  .pipe(gulp.dest('docs/images'))
 
   var buildHtml = gulp.src('src/**/*.html')
-  .pipe(gulp.dest('build'));
+  .pipe(gulp.dest('docs'));
 
 });
 
