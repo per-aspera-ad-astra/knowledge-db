@@ -1,6 +1,8 @@
 .sidebar {
 
   &__link {
+    @include custom-link;
+    
     &:hover {
       color: var(--white);
     }

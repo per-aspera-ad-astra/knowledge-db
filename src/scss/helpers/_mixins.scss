@@ -31,3 +31,12 @@
     }
   }
 }
+
+// Customize links
+@mixin custom-link {
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

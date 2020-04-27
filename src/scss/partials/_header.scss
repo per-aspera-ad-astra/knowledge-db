@@ -8,6 +8,7 @@
   font: 400 19px/1.2 var(--font-title);
 
   a {
+    @include custom-link;
 
     &:hover {
       color: var(--white);

@@ -1,0 +1,31 @@
+extends ../../layout/_layout-article
+
+include ../../partials/_mixins
+
+block page
+  +page-title('Таск для создания иконочного шрифта')
+  +code
+    :verbatim
+      let gulp = require( 'gulp' ),
+          iconfont = require( 'gulp-iconfont' ),
+          iconfontCss = require( 'gulp-iconfont-css' );
+
+      const fontName = 'icons';
+
+      gulp.task( 'iconfont', async function () {
+        gulp.src( 'src/assets/icons/*.svg' )
+          .pipe( iconfontCss( {
+            targetPath   : '../scss/icons/_icons.scss',
+            fontPath     : 'assets/fonts/',
+            fontName    : fontName
+
+          } ) )
+          .pipe( iconfont( {
+            fontName    : fontName,
+            formats     : [ 'svg', 'ttf', 'eot', 'woff', 'woff2' ],
+            normalize   : true,
+            fontHeight  : 1001
+          } ) )
+          .pipe( gulp.dest( 'src/assets/fonts' ) )
+      });
+  

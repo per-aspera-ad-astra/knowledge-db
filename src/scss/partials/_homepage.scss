@@ -5,6 +5,7 @@
 .categories {
 
   &__item {
+    @include custom-link;
     display: flex;
     align-items: center;
     justify-content: center;

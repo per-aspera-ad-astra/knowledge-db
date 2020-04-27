@@ -1,0 +1,28 @@
+extends ../../layout/_layout-article
+
+include ../../partials/_mixins
+
+block page
+  +page-title('Усечение текста до определенного количества строк')
+  p Усечь текст до длины одной строки можно следующим образом:
+  +code
+    :verbatim
+      .truncate {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+  p Однако, данный способ не подойдет, если необходимо обрезать текст например после второй или третьей строки.
+  p Решить задачу можно с помощью свойства <code>line-clamp</code> в такой комбинации:
+  +code
+    :verbatim
+      .line-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+      }
+  p где <code>-webkit-line-clamp: 3;</code> - количество строк, после которых текст будет обрезан.
+  p Свойство не поддерживается в IE и некоторых мобильных браузерах. 
+  p
+    a(href="https://caniuse.com/#search=line-clamp", target="_blank") Проверить актуальную поддержку

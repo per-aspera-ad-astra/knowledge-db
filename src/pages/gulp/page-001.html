@@ -22,23 +22,31 @@
       <div class="row">
         <main class="main col-12 col-md-9">
           <div class="single-page">
-            <h2 class="page-title">Как измененить порт локального хоста по умолчанию</h2>
-            <p>Чтобы изменить порт, на котором запускается приложение React, нужно исправить часть package.json из:</p>
+            <h2 class="page-title">Таск для создания иконочного шрифта</h2>
             <div class="code">
               <pre><code>
-"start": "react-scripts start"
-</code></pre>
-            </div>
-            <p>Для Windows, например:</p>
-            <div class="code">
-              <pre><code>
-"start": "set PORT=3006 && react-scripts start"
-</code></pre>
-            </div>
-            <p>Для Linux и Mac OS, например</p>
-            <div class="code">
-              <pre><code>
-"start": "PORT=3006 react-scripts start" 
+let gulp = require( 'gulp' ),
+    iconfont = require( 'gulp-iconfont' ),
+    iconfontCss = require( 'gulp-iconfont-css' );
+
+const fontName = 'icons';
+
+gulp.task( 'iconfont', async function () {
+  gulp.src( 'src/assets/icons/*.svg' )
+    .pipe( iconfontCss( {
+      targetPath   : '../scss/icons/_icons.scss',
+      fontPath     : 'assets/fonts/',
+      fontName    : fontName
+
+    } ) )
+    .pipe( iconfont( {
+      fontName    : fontName,
+      formats     : [ 'svg', 'ttf', 'eot', 'woff', 'woff2' ],
+      normalize   : true,
+      fontHeight  : 1001
+    } ) )
+    .pipe( gulp.dest( 'src/assets/fonts' ) )
+});
 </code></pre>
             </div>
           </div>

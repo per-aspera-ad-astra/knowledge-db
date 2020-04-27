@@ -6,6 +6,8 @@
   }
 
   a {
+    @include custom-link;
+    
     &:hover {
       color: var(--white);
     }

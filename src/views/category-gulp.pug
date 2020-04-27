@@ -1,0 +1,14 @@
+extends layout/_layout-category
+
+include partials/_mixins
+
+block title
+  +page-title('Gulp')
+
+block category-list
+  - var articles = []
+  -articles.push(['Таск для создания иконочного шрифта', 'pages/gulp/page-001.html'])
+
+  each index in articles
+    li.category-list__item
+      a(href= index[1])= index[0]

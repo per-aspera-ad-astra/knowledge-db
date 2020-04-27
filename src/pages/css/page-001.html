@@ -22,25 +22,32 @@
       <div class="row">
         <main class="main col-12 col-md-9">
           <div class="single-page">
-            <h2 class="page-title">Как измененить порт локального хоста по умолчанию</h2>
-            <p>Чтобы изменить порт, на котором запускается приложение React, нужно исправить часть package.json из:</p>
+            <h2 class="page-title">Усечение текста до определенного количества строк</h2>
+            <p>Усечь текст до длины одной строки можно следующим образом:</p>
             <div class="code">
               <pre><code>
-"start": "react-scripts start"
+.truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 </code></pre>
             </div>
-            <p>Для Windows, например:</p>
+            <p>Однако, данный способ не подойдет, если необходимо обрезать текст например после второй или третьей строки.</p>
+            <p>Решить задачу можно с помощью свойства <code>line-clamp</code> в такой комбинации:</p>
             <div class="code">
               <pre><code>
-"start": "set PORT=3006 && react-scripts start"
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
 </code></pre>
             </div>
-            <p>Для Linux и Mac OS, например</p>
-            <div class="code">
-              <pre><code>
-"start": "PORT=3006 react-scripts start" 
-</code></pre>
-            </div>
+            <p>где <code>-webkit-line-clamp: 3;</code> - количество строк, после которых текст будет обрезан.</p>
+            <p>Свойство не поддерживается в IE и некоторых мобильных браузерах. </p>
+            <p><a href="https://caniuse.com/#search=line-clamp" target="_blank">Проверить актуальную поддержку</a></p>
           </div>
         </main>
         <nav class="sidebar col-12 col-md-3">
